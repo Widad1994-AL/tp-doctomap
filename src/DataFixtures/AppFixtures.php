@@ -18,13 +18,13 @@ class AppFixtures extends Fixture
             $doctor->setFirstname($faker->firstName());
             $doctor->setLastname($faker->lastName());
             $doctor->setSpeciality($faker->jobTitle());
-            $doctor->setAddress($faker->streetAddress());
+            $doctor->setAddress($faker->streetAddress());  // ✅ bien écrit
             $doctor->setCity($faker->city());
-            $doctor->setZip($faker->postcode());
+            $doctor->setZip(substr($faker->postcode(), 0, 5)); // pour être sûr que ce soit 5 caractères
             $doctor->setPhone($faker->phoneNumber());
 
             $manager->persist($doctor);
-        }
+        }   
 
         $manager->flush();
     }

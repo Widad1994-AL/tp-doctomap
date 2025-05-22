@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20250522121134 extends AbstractMigration
+final class Version20250522131816 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -21,7 +21,7 @@ final class Version20250522121134 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql(<<<'SQL'
-            CREATE TABLE doctor (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, firstname VARCHAR(50) NOT NULL, lastname VARCHAR(50) NOT NULL, speciality VARCHAR(50) NOT NULL, adress VARCHAR(255) NOT NULL, city VARCHAR(50) NOT NULL, zip VARCHAR(5) NOT NULL, phone VARCHAR(12) DEFAULT NULL)
+            CREATE TABLE doctor (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, firstname VARCHAR(50) NOT NULL, lastname VARCHAR(50) NOT NULL, speciality VARCHAR(50) NOT NULL, address VARCHAR(255) NOT NULL, city VARCHAR(50) NOT NULL, zip VARCHAR(5) NOT NULL, phone VARCHAR(12) DEFAULT NULL)
         SQL);
         $this->addSql(<<<'SQL'
             CREATE TABLE messenger_messages (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, body CLOB NOT NULL, headers CLOB NOT NULL, queue_name VARCHAR(190) NOT NULL, created_at DATETIME NOT NULL --(DC2Type:datetime_immutable)
